@@ -1,6 +1,4 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
-layout: doc
+layout: home
 ---
-
-<div>首页</div>
