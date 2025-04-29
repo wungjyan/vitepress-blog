@@ -53,7 +53,7 @@ function _scrollToTop() {
       :key="post.url"
     >
       <h2 class="!text-xl !font-medium">{{ post.title }}</h2>
-      <p class="!py-2 !text-sm" v-html="post.excerpt"></p>
+      <div class="!py-2 !text-sm" v-html="post.excerpt"></div>
       <div class="text-[13px] text-text-2">
         <span>{{ fromNow(post.date.date) }}</span>
       </div>
