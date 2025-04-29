@@ -5,12 +5,12 @@ interface Post {
   title: string;
   url: string;
   date: {
+    date: Date;
     time: number;
     string: string;
   };
   description?: string;
   tags?: string[];
-  category?: string;
   excerpt?: string;
 }
 
@@ -39,6 +39,7 @@ export default createContentLoader("posts/*.md", {
 function _formatDate(raw: string): Post["date"] {
   const date = new Date(raw);
   return {
+    date,
     time: +date,
     string: formatDate(date),
   };

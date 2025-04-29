@@ -15,8 +15,8 @@
   "license": "ISC",
   "packageManager": "pnpm@10.7.0",
   "devDependencies": {
-    "@types/node": "^22.14.0",
-    "vitepress": "^1.6.3"
+    "@types/node": "^22.15.3",
+    "vitepress": "2.0.0-alpha.5"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.4",

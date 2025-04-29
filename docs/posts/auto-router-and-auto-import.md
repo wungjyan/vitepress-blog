@@ -2,7 +2,6 @@
 title: Vue项目自动路由和自动导入功能配置
 date: 2024-06-04T04:51:07.752Z
 description: 详解Vite+Vue项目自动化配置方案：通过unplugin-vue-router实现文件系统路由自动生成，结合unplugin-auto-import解决模块重复导入痛点，提升开发效率与代码整洁度。
-category: "代码笔记"
 tags: ["Vite"]
 ---
 
@@ -72,7 +71,7 @@ export default router
 ```
 
 上面代码中的 `routes` 变成自动生成的，它是基于文件系统的，默认路由文件映射目录是 `src/pages`，测试创建 `pages/index.vue`文件，可以看到 `typed-router.d.ts`文件中，已自动生成路由的映射：
-![typed-router.d.ts.png](https://img.jyan.wang/2024/typed-router.d.ts.png)
+![typed-router.d.ts.png](https://img.wjian.xyz/2024/typed-router.d.ts.png)
 
 ### 排除目录
 
@@ -142,7 +141,7 @@ export default defineConfig({
 ```
 
 观察 `auto-imports.d.ts`文件，会发现已经有`vue`和 `vue-router`的内置模块的类型声明了：
-![typed-router.d.ts.png](https://img.jyan.wang/2024/auto-imports.d.ts.png)
+![typed-router.d.ts.png](https://img.wjian.xyz/2024/auto-imports.d.ts.png)
 
 现在使用 vue 模块开发时，就不需要再手动导入了：
 
@@ -190,7 +189,7 @@ export default defineConfig({
 ```
 
 再查看`auto-imports.d.ts`文件，发现也已经有了对应方法的类型声明：
-![auto-imports-router.png](https://img.jyan.wang/2024/auto-imports-router.png)
+![auto-imports-router.png](https://img.wjian.xyz/2024/auto-imports-router.png)
 
 ### 自动导入自己写的工具模块
 
@@ -226,4 +225,4 @@ AutoImport({
 ```
 
 配置完成后，观察 `auto-imports.d.ts`文件，可以发现所有的方法都已声明了类型，可以直接使用了。
-![auto-imports-utils.png](https://img.jyan.wang/2024/auto-imports-utils.png)
+![auto-imports-utils.png](https://img.wjian.xyz/2024/auto-imports-utils.png)

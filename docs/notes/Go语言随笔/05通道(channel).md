@@ -2,7 +2,6 @@
 title: Go 语言中的 channel
 date: 2025-03-27T06:57:02.579Z
 description: 详解Go语言Channel核心机制：涵盖无缓冲/有缓冲通道、select多路复用、单向通道及超时处理，解决协程通信死锁问题，提升并发编程可靠性。
-category: "代码笔记"
 tags: ["Go"]
 ---
 

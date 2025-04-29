@@ -2,7 +2,6 @@
 title: uniapp 开发记录
 date: 2024-03-28T16:45:39+08:00
 description: 总结uniapp跨平台App开发实战经验：涵盖基座配置、证书管理、easycom组件模式、路由拦截及原生图层层级难题解决方案，助力高效避坑与性能优化。
-category: "开发记录"
 tags: ["uniapp", "开发记录"]
 ---
 
@@ -47,7 +46,7 @@ uniapp 支持两种初始化项目方式，一个是用他们的编辑器 HBuild
 ### 指定页面调试
 
 有时候开发的页面层级比较深，调试时需要能够直达页面比较快捷。此时可以设置 `condition` 这个配置项，在 pages.json 中配置页面路径列表，开发时即可选择打开指定页面。如图：
-![uniapp-condition](https://img.jyan.wang/2024/uniapp-condition.jpg)
+![uniapp-condition](https://img.wjian.xyz/2024/uniapp-condition.jpg)
 
 ### 其他
 

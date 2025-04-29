@@ -2,7 +2,6 @@
 title: Vite 项目配置模块分包
 date: 2024-06-13T14:04:18.925Z
 description: 详解Vite项目模块分包优化：通过rollupOptions配置manualChunks拆分第三方库与业务代码，提升加载速度与缓存利用率，解决大文件性能瓶颈的最佳实践。
-category: "代码笔记"
 tags: ["Vite"]
 ---
 
@@ -12,7 +11,7 @@ tags: ["Vite"]
 
 如图：
 
-![vite build 默认结果](https://img.jyan.wang/2024/vite-build-result.png)
+![vite build 默认结果](https://img.wjian.xyz/2024/vite-build-result.png)
 
 这样的打包结果显示不是合理的，当项目大了之后，js 入口文件会变得非常大，影响加载速度。还有就是对于项目中长期不变的 js 引入文件，我们不应该使其每次打包都重新生成 hash 名，这样会导致每次重新 build 后，客户端因为文件 hash 值的变化，都要重新下载这些固定文件内容，在网速不好的情况会影响使用体验。所以针对这点，需要做 build 优化，拆分模块文件。
 
@@ -37,7 +36,7 @@ tags: ["Vite"]
 
 此时再执行打包，结果如下：
 
-![优化build结果](https://img.jyan.wang/2024/Snipaste_2024-06-13_22-36-07.png)
+![优化build结果](https://img.wjian.xyz/2024/Snipaste_2024-06-13_22-36-07.png)
 
 可以看到 `vue` 文件是被单独拆分出来了，且后续再修改项目代码时，这个文件指纹是不会再变的，因为开发中不可能修改 vue 源码。同样的道理，对于引用的第三方库，我们都应该拆分出来，可以放在一个 chunk 中，也可以单独拆分，如下：
 

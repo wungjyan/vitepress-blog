@@ -2,7 +2,6 @@
 title: "通过 Github Actions 实现 Hugo 博客的自动构建部署"
 date: 2022-02-24T09:50:29+08:00
 description: 详解通过GitHub Actions实现Hugo博客自动化部署，包含SSH密钥配置、工作流编排与rsync同步技术，解决手动构建痛点，提升静态站点持续交付效率的最佳实践。
-category: "折腾记录"
 tags: ["Blog", "Hugo"]
 ---
 
@@ -18,7 +17,7 @@ tags: ["Blog", "Hugo"]
 
 因为本文是介绍部署到服务器，所以需要准备一个服务器的。然后部署 Web 站点是通过 `nginx` 的，你可以自己安装配置 `nginx`，也可以通过宝塔这样的程序来简易安装，总而言之，你都会得到一个网站静态文件存放的目录，这个目录其实就是存放博客构建之后的文件的。我是自己安装 nginx 并配置目录的：
 
-![nginx 根目录](https://img.jyan.wang/2022/WX20220224-102219%402x.png)
+![nginx 根目录](https://img.wjian.xyz/2022/WX20220224-102219%402x.png)
 
 之所以强调这个目录，是因为我们后面要用到它。不熟悉命令行操作的，推荐使用宝塔，会自动帮你配置好。
 
@@ -32,7 +31,7 @@ ssh-keygen -t rsa -C "youremail@example.com"  // 后面填你自己的邮箱
 
 找到你电脑本地已经创建好的公钥，Mac 和 Linux 系统上一般在 `~/.ssh` 目录中，Windows 系统一般也在用户目录中的 `.ssh` 目录中。
 
-![密钥名称](https://img.jyan.wang/2022/WX20220224-105012%402x.png)
+![密钥名称](https://img.wjian.xyz/2022/WX20220224-105012%402x.png)
 
 `id_rsa.pub` 是公钥，`id_rsa` 是私钥，现在要将公钥内容拷贝一份到服务器上。不管是手动复制粘贴还是命令形式都好，你要做的就是将本地的 `id_rsa.pub` 文件内容拷贝到服务器的 `~/.ssh/authorized_keys` 文件中，如果服务器没有这个文件，按照路径创建一个。
 
@@ -46,7 +45,7 @@ ssh-keygen -t rsa -C "youremail@example.com"  // 后面填你自己的邮箱
 
 创建的代码仓库不管是公开库还是私密库都可以，过程我就不细述了。仓库建好之后，我们要配置一下私钥，按照下图操作：
 
-![私钥配置步骤](https://img.jyan.wang/2022/WechatIMG51.png)
+![私钥配置步骤](https://img.wjian.xyz/2022/WechatIMG51.png)
 
 在你的仓库界面，点击 `Settings`，点开左侧的 `Secrets`，点击 `Actions`，再点击 `New repository secret` 创建密钥，密钥名称输入 `BLOG_DEPLOY_KEY`，内容则是你电脑本地的 `id_rsa` 私钥内容。
 
@@ -191,11 +190,11 @@ on:
 
 如果一切正常，点开你的仓库 `Actions`，你会发现正在运行的工作流，例如我的：
 
-![工作流列表](https://img.jyan.wang/2022/WX20220224-172418.png)
+![工作流列表](https://img.wjian.xyz/2022/WX20220224-172418.png)
 
 点开触发的工作流，还可查看工作流的各个步骤及其详细日志：
 
-![工作流执行日志](https://img.jyan.wang/2022/WX20220224-173003.png)
+![工作流执行日志](https://img.wjian.xyz/2022/WX20220224-173003.png)
 
 自此之后，不需要每次更新博客都要手动登录服务器部署站点了。
 

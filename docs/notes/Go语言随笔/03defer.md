@@ -2,7 +2,6 @@
 title: Go 语言defer详解
 date: 2025-03-24T06:33:20.797Z
 description: 详解Go语言defer机制：涵盖延迟执行顺序、参数预计算、返回值修改，解决资源管理与错误处理难题，提升代码健壮性与可维护性。
-category: "代码笔记"
 tags: ["Go"]
 ---
 

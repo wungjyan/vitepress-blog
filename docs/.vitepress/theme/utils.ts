@@ -12,3 +12,7 @@ export function formatDate(date: string | Date, f = "YYYY-MM-DD") {
   if (!date) return "";
   return dayjs(date).format(f);
 }
+
+export function canConvertToNumber(value) {
+  return !isNaN(Number(value));
+}
