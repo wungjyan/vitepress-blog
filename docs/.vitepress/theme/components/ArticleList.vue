@@ -57,7 +57,11 @@ function _scrollToTop() {
       <div class="text-[13px] text-text-2">
         <span>{{ fromNow(post.date.date) }}</span>
       </div>
-      <a class="absolute top-0 right-0 bottom-0 left-0" :href="post.url"></a>
+      <a
+        class="absolute top-0 right-0 bottom-0 left-0"
+        :href="post.url"
+        :aria-label="post.title"
+      ></a>
     </article>
     <nav class="flex items-center font-medium">
       <button
