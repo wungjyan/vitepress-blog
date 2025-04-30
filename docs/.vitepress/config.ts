@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "瓶子笔记",
-  description: "爱折腾的前端程序员，关注 AI 和 webgl，正在学习 Go 语言",
+  description: "一个爱折腾的前端程序员的网络自留地",
   lastUpdated: false,
   cleanUrls: true,
   ignoreDeadLinks: true,
@@ -18,8 +18,8 @@ export default defineConfig({
     [
       "meta",
       {
-        name: "keywords",
-        content: "程序员,前端,前端工程师,独立博客,AI,Vue,Threejs,Golang",
+        name: "author",
+        content: "wungjyan",
       },
     ],
   ],
@@ -47,6 +47,10 @@ export default defineConfig({
             {
               text: "05通道(channel)",
               link: "/notes/Go语言随笔/05通道(channel)",
+            },
+            {
+              text: "06context",
+              link: "/notes/Go语言随笔/06context",
             },
           ],
         },
