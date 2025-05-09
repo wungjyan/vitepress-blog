@@ -2,6 +2,7 @@
 title: 新的脚本，自动部署 Hugo 博客至服务器
 date: 2023-03-19T13:42:39+08:00
 description: 优化Hugo博客自动化部署方案：基于GitHub Actions精简工作流配置，集成rsync同步插件实现高效文件传输，降低运维复杂度与部署耗时。
+categories: ['code']
 tags: ["Blog", "Hugo"]
 ---
 

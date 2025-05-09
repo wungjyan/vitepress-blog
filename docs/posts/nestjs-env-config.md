@@ -2,6 +2,7 @@
 title: 详解 Nestjs 环境变量使用
 date: 2025-04-22
 description: 详解NestJS环境变量配置实践，涵盖@nestjs/config模块使用、多环境配置(.env/.env.production)、YAML文件集成及Joi校验方案，通过优先级覆盖机制和全局加载策略构建专业级应用配置体系。
+categories: ['code']
 tags: ["Nestjs"]
 ---
 

@@ -1,8 +1,11 @@
 ---
 title: Go语言的Context
 date: "2025-04-30"
+description: 介绍 Go 语言中 context 包的使用，包括 WithCancel、WithTimeout、WithDeadline 和 WithValue 等方法的应用。
+categories: ['code']
 ---
 `context` 是 Go 语言标准库中的一个包，作用是创建上下文对象来实现跨层级、跨协程的并发控制与消息传递。
+<!-- more -->
 
 ## 方法介绍
 `context` 提供了一些方法来创建上下文对象，分别有：
@@ -172,4 +175,70 @@ func main() {
 }
 ```
 
-## 未完待续
+## WithDeadline 到期取消
+`context` 提供了 `WithDeadline()` 方法，可以创建一个基于绝对时间到期的上下文，当到期时，会自动触发取消信号，终止关联的所有操作。
+
+其实上面的 `WithTimeout` 方法是 `WithDeadline` 的语法糖，`WithTimeout` 内部也是调用了 `WithDeadline` 方法，同时通过 `time.Now().Add(timeout)` 将时间转换为绝对时间。所以这两种写法是等价的：
+```go
+// 使用 WithTimeout
+context.WithTimeout(context.Background(), 3*time.Second) 
+// 使用 WithDeadline
+context.WithDeadline(context.Background(), time.Now().Add(3*time.Second))
+```
+同时也可以设置精准的时间，改写上面查询数据库的例子：
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"sync"
+	"time"
+)
+
+var wg sync.WaitGroup
+
+func queryDB(ctx context.Context) {
+	defer wg.Done()
+	for i := 0; i < 20; i++ {
+		select {
+		case <-ctx.Done():
+			fmt.Println("查询超时取消了") // 超时被取消
+			return
+		default:
+			fmt.Printf("第%d次查询...\n", i)
+			time.Sleep(1 * time.Second) // 每次查询耗时1秒
+		}
+	}
+}
+func main() {
+	// 设置到期时间 2025年5月6日12:30:00
+	deadline := time.Date(2025, 5, 6, 12, 30, 0, 0, time.Local)
+	ctx, cancel := context.WithDeadline(context.Background(), deadline)
+	defer cancel()
+	wg.Add(1)
+	go queryDB(ctx)
+	wg.Wait()
+}
+```
+
+## WithValue 传递数据
+`context` 提供了 `WithValue()` 方法，可以创建一个携带数据的子上下文，用于跨层级传递请求域信息（如用户ID、请求跟踪ID）。
+
+这个比较简单，就是携带`key-value`的值在上下文中传递。写法是：
+```go
+ctx := context.WithValue(context.Background(), key, value)
+
+// 取值
+ctx.Value(key)
+```
+
+这里需要注意 `key` 名的设置，应该避免直接使用内置的基础类型作为 key，如 `int`、`string` 等，因为不同包的相同字符串 key 可能引发数据覆盖。推荐使用空接口类型来作为`key`，如：
+```go
+func main() {
+	type userKey struct{}
+	ctx := context.WithValue(context.Background(), userKey{}, "hello world")
+	fmt.Println(ctx.Value(userKey{})) // hello world
+}
+```
+注意，`key` 的类型必须是可比较的，否则运行时会导致 panic，禁止使用函数、切片等不可比较的类型。

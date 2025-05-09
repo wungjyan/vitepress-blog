@@ -10,6 +10,7 @@ interface Post {
     string: string;
   };
   description?: string;
+  categories?: string[];
   tags?: string[];
   excerpt?: string;
 }
@@ -30,7 +31,7 @@ export default createContentLoader("posts/*.md", {
         date: _formatDate(frontmatter.date),
         description: frontmatter.description || frontmatter.title,
         tags: frontmatter.tags || [],
-        category: frontmatter.category || "",
+        categories: frontmatter.categories || [],
       }))
       .sort((a, b) => b.date.time - a.date.time);
   },

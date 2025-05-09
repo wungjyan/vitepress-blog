@@ -24,38 +24,9 @@ export default defineConfig({
     ],
   ],
   themeConfig: {
-    nav: [
-      { text: "笔记", link: "/notes", activeMatch: "/notes/.*" },
-      { text: "关于", link: "/about" },
-    ],
+    nav: [{ text: "关于", link: "/about" }],
 
-    sidebar: {
-      "/notes/": [
-        {
-          text: "Go语言随笔",
-          items: [
-            { text: "01空接口", link: "/notes/Go语言随笔/01空接口" },
-            {
-              text: "02切片的值传递",
-              link: "/notes/Go语言随笔/02切片的值传递",
-            },
-            { text: "03defer", link: "/notes/Go语言随笔/03defer" },
-            {
-              text: "04互斥锁与读写锁",
-              link: "/notes/Go语言随笔/04互斥锁与读写锁",
-            },
-            {
-              text: "05通道(channel)",
-              link: "/notes/Go语言随笔/05通道(channel)",
-            },
-            {
-              text: "06context",
-              link: "/notes/Go语言随笔/06context",
-            },
-          ],
-        },
-      ],
-    },
+    sidebar: {},
 
     // socialLinks: [
     //   { icon: "github", link: "https://github.com/vuejs/vitepress" },

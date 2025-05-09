@@ -2,6 +2,7 @@
 title: TypeScript 中 null，undefined 和 void 的区别
 date: 2024-06-25T02:13:17.434Z
 description: 解析TypeScript中null、undefined与void类型区别，详解strictNullChecks配置对类型安全的影响，强调生产环境开启严格检查的必要性及最佳实践。
+categories: ['code']
 tags: ["TypeScript"]
 ---
 

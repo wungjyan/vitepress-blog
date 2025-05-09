@@ -2,6 +2,7 @@
 title: "通过 Github Actions 实现 Hugo 博客的自动构建部署"
 date: 2022-02-24T09:50:29+08:00
 description: 通过 Github Actions 实现 Hugo 静态博客的自动化部署，告别手动构建与上传的繁琐流程。从服务器配置、SSH 密钥管理到 CI/CD 工作流设计，详解如何利用 rsync 同步文件至阿里云 ECS，提升博客维护效率。
+categories: ['code']
 tags: ["Blog", "Hugo"]
 ---
 

@@ -2,6 +2,7 @@
 title: Vue项目自动路由和自动导入功能配置
 date: 2024-06-04T04:51:07.752Z
 description: 详解Vite+Vue项目自动化配置方案：通过unplugin-vue-router实现文件系统路由自动生成，结合unplugin-auto-import解决模块重复导入痛点，提升开发效率与代码整洁度。
+categories: ['code']
 tags: ["Vite"]
 ---
 
