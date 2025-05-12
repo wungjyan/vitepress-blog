@@ -22,6 +22,7 @@ export default defineConfig({
         content: "wungjyan",
       },
     ],
+    ["link", { rel: "icon", href: "public/favicon.ico" }],
   ],
   themeConfig: {
     nav: [{ text: "关于", link: "/about" }],
