@@ -2,7 +2,7 @@
 title: Three.js 绘制点，线，面和自定义几何体
 date: 2025-05-09T07:33:02.990Z
 description: 介绍使用 Three.js 中的 BufferGeometry 来绘制点，线，面以及自定义几何体
-categories: ['code']
+categories: ['notes']
 ---
 
 Three.js 内置了很多几何体模型供我们使用，但其实我们完全可以自定义任何形状的几何体。

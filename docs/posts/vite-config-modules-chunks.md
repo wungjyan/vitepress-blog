@@ -2,7 +2,7 @@
 title: Vite 项目配置模块分包
 date: 2024-06-13T14:04:18.925Z
 description: 详解Vite项目模块分包优化：通过rollupOptions配置manualChunks拆分第三方库与业务代码，提升加载速度与缓存利用率，解决大文件性能瓶颈的最佳实践。
-categories: ['code']
+categories: ['notes']
 tags: ["Vite"]
 ---
 

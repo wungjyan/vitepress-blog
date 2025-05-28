@@ -2,7 +2,7 @@
 title: CSS 属性值 initial、unset 和 revert 的区别
 date: 2024-11-29
 description: 介绍 CSS 属性值 initial、unset 和 revert 的区别。
-categories: ['code']
+categories: ['notes']
 ---
 
 initial、unset 和 revert 都是 CSS 中用于控制属性值的全局关键字，它们都能重置属性值，但各自的作用机制和应用场景存在差异。

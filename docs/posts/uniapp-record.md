@@ -2,7 +2,7 @@
 title: uniapp 开发记录
 date: 2024-03-28T16:45:39+08:00
 description: 总结uniapp跨平台App开发实战经验：涵盖基座配置、证书管理、easycom组件模式、路由拦截及原生图层层级难题解决方案，助力高效避坑与性能优化。
-categories: ['code']
+categories: ['dev']
 tags: ["uniapp", "开发记录"]
 ---
 

@@ -2,7 +2,7 @@
 title: 开发 AI 对话功能的踩坑记录
 date: 2024-11-27T08:25:56.669Z
 description: 记录AI对话功能开发中WebSocket重连机制、Markdown实时分段渲染、数学公式解析等关键问题及解决方案。
-categories: ['code']
+categories: ['dev']
 tags: ["开发记录"]
 ---
 

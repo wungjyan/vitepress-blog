@@ -2,7 +2,7 @@
 title: 关于并发请求
 date: 2024-07-01T10:23:19.708Z
 description: JavaScript并发请求控制方案：通过动态补位队列替代Promise.all，解决大流量场景下浏览器限制、服务器压力和网络拥堵问题，实现精准并发管控与错误隔离机制。
-categories: ['code']
+categories: ['notes']
 tags: ["JavaScript"]
 ---
 

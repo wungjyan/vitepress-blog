@@ -2,7 +2,7 @@
 title: 解决 Mac 钥匙串访问中证书不受信任问题
 date: 2024-10-31T02:46:35.279Z
 description: 解决Mac钥匙串中iOS开发证书不受信任问题：通过下载安装Apple Worldwide Developer Relations根证书，修复.p12证书导出错误，保障应用打包流程顺畅。
-categories: ['code']
+categories: ['dev']
 tags: ["开发记录"]
 ---
 

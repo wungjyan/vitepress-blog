@@ -1,7 +1,15 @@
 export const categoryMap = [
+  // {
+  //   text: "code",
+  //   name: "代码",
+  // },
   {
-    text: "code",
-    name: "代码",
+    text: "dev",
+    name: "开发",
+  },
+  {
+    text: "notes",
+    name: "笔记",
   },
   // {
   //   text: "life",

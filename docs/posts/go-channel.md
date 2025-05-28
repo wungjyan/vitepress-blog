@@ -2,7 +2,7 @@
 title: Go 语言中的 channel
 date: 2025-03-27T06:57:02.579Z
 description: 详解Go语言Channel核心机制：涵盖无缓冲/有缓冲通道、select多路复用、单向通道及超时处理，解决协程通信死锁问题，提升并发编程可靠性。
-categories: ['code']
+categories: ['notes']
 ---
 
 Go 语言中的通道（channel）是用于在多个 goroutine 之间通信，它就像是一个传送带或者队列，遵循先入先出（FIFO）的规则，保证数据收发的顺序。同时，每一个通道都是一个具体类型的管道，所以在声明 channel 的时候需要为其指定元素类型。

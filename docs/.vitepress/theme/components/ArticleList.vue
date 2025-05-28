@@ -94,7 +94,7 @@ function _scrollToTop() {
 
 <template>
   <div class="flex flex-col items-center pt-12 px-5">
-    <div class="w-full md:w-2xl mb-12 pb-1 space-x-4 border-b-1 border-gutter">
+    <div class="w-full md:w-2xl mb-12 pb-1 space-x-6 border-b-1 border-gutter">
       <ClientOnly>
         <a
           key="all"
@@ -102,7 +102,7 @@ function _scrollToTop() {
           class="text-text-1 cursor-pointer"
           :class="{ '!text-indigo-500': !isCategoryExist }"
         >
-          全部
+          最新
         </a>
         <a
           v-for="category in categoryMap"

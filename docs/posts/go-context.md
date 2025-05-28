@@ -2,7 +2,7 @@
 title: Go语言的Context
 date: "2025-04-30"
 description: 介绍 Go 语言中 context 包的使用，包括 WithCancel、WithTimeout、WithDeadline 和 WithValue 等方法的应用。
-categories: ['code']
+categories: ['notes']
 ---
 `context` 是 Go 语言标准库中的一个包，作用是创建上下文对象来实现跨层级、跨协程的并发控制与消息传递。
 <!-- more -->
