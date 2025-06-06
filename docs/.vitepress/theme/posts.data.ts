@@ -13,6 +13,7 @@ interface Post {
   categories?: string[];
   tags?: string[];
   excerpt?: string;
+  draft?: boolean;
 }
 
 declare const data: Post[];
@@ -22,17 +23,18 @@ export { data };
 export default createContentLoader("posts/*.md", {
   excerpt: "<!-- more -->",
   transform(raw): Post[] {
-    //     .filter((frontmatter)=>!frontmatter.hide)
     return raw
       .map(({ url, frontmatter, excerpt }) => ({
         title: frontmatter.title,
         url,
         excerpt,
+        draft: frontmatter.draft,
         date: _formatDate(frontmatter.date),
         description: frontmatter.description || frontmatter.title,
         tags: frontmatter.tags || [],
         categories: frontmatter.categories || [],
       }))
+      .filter((frontmatter) => !frontmatter.draft)
       .sort((a, b) => b.date.time - a.date.time);
   },
 });
