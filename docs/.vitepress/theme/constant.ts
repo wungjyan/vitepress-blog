@@ -11,6 +11,10 @@ export const categoryMap = [
     text: "notes",
     name: "笔记",
   },
+  {
+    text: "other",
+    name: "其他",
+  },
   // {
   //   text: "life",
   //   name: "生活",
