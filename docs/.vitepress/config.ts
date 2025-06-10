@@ -26,6 +26,9 @@ export default defineConfig({
   ],
   themeConfig: {
     nav: [{ text: "关于", link: "/about" }],
+    outline: {
+      level: [2, 5],
+    },
 
     sidebar: {},
 
